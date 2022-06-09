@@ -51,6 +51,7 @@ async function loadDrillData(url) {
     for (let drill of data) {
         // console.log('Drill: ', drill);
         let marker = L.marker([drill.PHI, drill.LAMBDA]);
+        marker.bindPopup(`<h3>${drill.ADRESSE}</h3>${drill.AUFNDATUM}: ${drill.TIEFE_M} m`);
         overlay.addLayer(marker);
     }
 }
